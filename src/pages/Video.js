@@ -29,23 +29,19 @@ const Video = () => {
 
   useEffect(() => {
     if (id) {
-      try {
-        const q = query(doc(db, "videos", id));
-        onSnapshot(q, (snapShot) => {
-          setData(snapShot.data());
-        });
-        const commentsQuery = query(collection(db, "videos", id, "comments"));
-        onSnapshot(commentsQuery, (snapShot) => {
-          setComments(
-            snapShot.docs.map((doc) => ({
-              ...doc.data(),
-              id: doc.id,
-            }))
-          );
-        });
-      } catch (error) {
-        console.error(error + "error");
-      }
+      const q = query(doc(db, "videos", id));
+      onSnapshot(q, (snapShot) => {
+        setData(snapShot.data());
+      });
+      const commentsQuery = query(collection(db, "videos", id, "comments"));
+      onSnapshot(commentsQuery, (snapShot) => {
+        setComments(
+          snapShot.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        );
+      });
     }
   }, [id]);
 
@@ -57,6 +53,7 @@ const Video = () => {
         dispatch(setUser(null));
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -84,14 +81,12 @@ const Video = () => {
       await addDoc(collection(db, "videos", id, "comments"), commentData);
     }
   };
-
   const handleLogin = async (e) => {
     e.preventDefault();
     const response = await signInWithPopup(auth, provider);
     dispatch(setUser(response.user));
   };
-   console.log(data, "ji");
-   
+
   return (
     <div className="py-20 pr-9 pl-6 bg-yt-black flex flex-row h-full">
       <div className="left flex-1 pr-4 pl-[0.2rem]">
@@ -241,13 +236,13 @@ const Video = () => {
         </div>
         <div className="pt-8">
           {videos?.map((video, i) => {
-            if (video.id !== id) {
-              return (
-                <Link key={i} to={`/video/${video.id}`}>
-                  <RecommendVideo {...video} />
-                </Link>
-              );
-            }
+            return video.id !== id ? (
+              <Link key={i} to={`/video/${video.id}`}>
+                <RecommendVideo {...video} />
+              </Link>
+            ) : (
+              ""
+            );
           })}
         </div>
       </div>
