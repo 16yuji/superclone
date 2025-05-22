@@ -201,7 +201,7 @@ const Video = () => {
           )}
 
           <div className="mt-4">
-            {comments.map((item, i) => (
+            {comments?.map((item, i) => (
               <Comment key={i} {...item} />
             ))}
           </div>
@@ -234,7 +234,7 @@ const Video = () => {
           </div>
         </div>
         <div className="pt-8">
-          {videos.map((video, i) => {
+          {videos?.map((video, i) => {
             if (video.id !== id) {
               return (
                 <Link key={i} to={`/video/${video.id}`}>
