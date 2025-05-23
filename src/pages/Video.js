@@ -10,7 +10,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { auth, db, timestamp } from "../firebase";
-import { AiFillLike, AiOutlineLike } from "react-icons/ai";
+import { AiFillLike } from "react-icons/ai";
 import { RiShareForwardLine } from "react-icons/ri";
 import { HiDotsHorizontal, HiDownload } from "react-icons/hi";
 import { MdOutlineSort, MdVerified } from "react-icons/md";
@@ -18,11 +18,10 @@ import { BiDislike } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, setUser } from "../slices/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
-import Comment from "../components/Comment";
+import Comment from "../components/video/Comment";
 import { CategoryItems } from "../static/Data";
-import RecommendVideo from "../components/RecommendVideo";
-import { signInWithPopup } from "firebase/auth";
-import { provider } from "../firebase";
+import RecommendVideo from "../components/video/RecommendVideo";
+import SignInComponent from "../components/SignInComponent";
 
 // Simple debounce function
 const debounce = (func, delay) => {
@@ -99,7 +98,7 @@ const Video = () => {
     });
   }, []);
 
-  const addComment = async (e) => {
+  const addComment = (e) => {
     e.preventDefault();
     let commentData = {
       image: user.photoURL,
@@ -109,14 +108,10 @@ const Video = () => {
     };
     if (id) {
       setComment("");
-      await addDoc(collection(db, "videos", id, "comments"), commentData);
+      addDoc(collection(db, "videos", id, "comments"), commentData);
     }
   };
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const response = await signInWithPopup(auth, provider);
-    dispatch(setUser(response.user));
-  };
+
   const toggleLike = async () => {
     if (!user) {
       return alert("Sign in to make your opinion count.");
@@ -125,15 +120,15 @@ const Video = () => {
     const videoDoc = doc(db, "videos", id);
 
     if (liked) {
-      await deleteDoc(userLikeDoc);
+      deleteDoc(userLikeDoc);
       setLiked(false);
       setLikeCount((prev) => prev - 1);
-      await setDoc(videoDoc, { likeCount: likeCount - 1 }, { merge: true });
+      setDoc(videoDoc, { likeCount: likeCount - 1 }, { merge: true });
     } else {
-      await setDoc(userLikeDoc, { liked: true });
+      setDoc(userLikeDoc, { liked: true });
       setLiked(true);
       setLikeCount((prev) => prev + 1);
-      await setDoc(videoDoc, { likeCount: likeCount + 1 }, { merge: true });
+      setDoc(videoDoc, { likeCount: likeCount + 1 }, { merge: true });
     }
   };
   const debouncedToggleLike = debounce(toggleLike, 1000);
@@ -255,29 +250,20 @@ const Video = () => {
                 type="text"
                 placeholder="Add a comment..."
                 className="bg-[transparent] border-b border-b-yt-light-black outline-none text-sm p-1 w-full"
-              />
-            </form>
+                />
+            </form >
           )}
 
+          {!user ? (
+              <SignInComponent prefix={"Please"} postfix={"add comments"} />
+            ) : null}
           <div className="mt-4">
             {comments?.map((item, i) => (
               <Comment key={i} {...item} />
             ))}
           </div>
-          {!user ? (
-            <div className="text-center p-12">
-              Please{" "}
-              <button
-                className="text-yt-blue hover:underline"
-                onClick={(e) => handleLogin(e)}
-              >
-                Sign In
-              </button>{" "}
-              to add your comment
-            </div>
-          ) : null}
-        </div>
-      </div>
+        </div >
+      </div >
 
       <div className="right px-3 overflow-y-hidden flex-[0.4]">
         <div>
@@ -304,7 +290,7 @@ const Video = () => {
           })}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
