@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import { ChannelCategoryItems } from "../../static/Data";
 import VideoTable from "./VideoTable";
 import { useSelector } from "react-redux";
-import SignInComponent from "../SignInComponent";
+import SignInComponent from "../helper/SignInComponent";
 
 const ContentComponent = () => {
   const { user } = useSelector((state) => state.userInfo);
@@ -38,7 +39,9 @@ const ContentComponent = () => {
               <SignInComponent
                 prefix={"Please"}
                 postfix={`view ${activeInTopbar}`}
-              />
+              >
+                sign in
+              </SignInComponent>
             </div>
           )
         ) : user ? (
