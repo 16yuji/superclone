@@ -13,7 +13,7 @@ const VideoSection = ({ status, videos, error, errorMsg }) => {
             <p className="p-3 text-[#fff] absolute top-[24rem]">{errorMsg}</p>
           )}
           {status === "loading" && (
-             <span className="mt-[-9rem]">
+            <span className="mt-[-9rem]">
               <TailSpin
                 visible={true}
                 height="40"

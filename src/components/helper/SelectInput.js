@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const SelectInput = ({ name, value, onChange, error, label, options }) => {

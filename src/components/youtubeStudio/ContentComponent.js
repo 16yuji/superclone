@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { ChannelCategoryItems } from "../../static/Data";
 import VideoTable from "./VideoTable";

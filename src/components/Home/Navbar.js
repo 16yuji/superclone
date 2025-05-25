@@ -1,5 +1,3 @@
-//Navbar.js
-
 import React, { useState, useEffect } from "react";
 import { BiVideoPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -37,13 +35,13 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(fetchVideos());
-     }, [dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       dispatch(setUser(user));
     });
-     }, [dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     let _userUploadedVideos = [];
@@ -53,7 +51,7 @@ const Navbar = () => {
       );
     }
     dispatch(setUserUploadedVideos(_userUploadedVideos));
-    }, [allVideos, user, dispatch]);
+  }, [allVideos, user, dispatch]);
 
   const handleToggleSidebar = () => {
     if (location.pathname === "/YoutubeStudio") {
@@ -131,7 +129,7 @@ const Navbar = () => {
     >
       {/* left section */}
       <div className="flex justify-start items-center w-1/4">
-         <MenuButton
+        <MenuButton
           handleToggleSidebar={handleToggleSidebar}
           location={location}
         />
@@ -148,7 +146,7 @@ const Navbar = () => {
       </div>
       {/* middle section */}
       {location.pathname !== "/YoutubeStudio" ? (
-         <SearchBar searchQuery={searchQuery} handleSearch={handleSearch} />
+        <SearchBar searchQuery={searchQuery} handleSearch={handleSearch} />
       ) : (
         <div className="flex flex-row items-center w-2/4">
           <div className="w-full flex text-[#576772] border border-[#606060] items-center rounded-[5px] h-10">
@@ -181,7 +179,7 @@ const Navbar = () => {
             </div>
           )}
           {/* Popup Window */}
-           {showPopup && <AddVideo togglePopup={togglePopup} isNew={true} />}
+          {showPopup && <AddVideo togglePopup={togglePopup} isNew={true} />}
           <NotificationsBell location={location} />
           <ProfileImage
             user={user}

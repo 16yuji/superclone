@@ -10,7 +10,7 @@ const RecommendVideo = ({
   uploadTime,
 }) => {
   return (
-     <div className="text-yt-white md:flex cursor-pointer mb-1">
+    <div className="text-yt-white md:flex cursor-pointer mb-1">
       <img
         src={thumbnail}
         alt=""

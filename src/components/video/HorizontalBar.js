@@ -34,7 +34,7 @@ const HorizontalBar = ({ CategoryItems }) => {
     };
   }, []);
 
-   const handleFilter = (item) => {
+  const handleFilter = (item) => {
     setSelectedCategory(item);
     if (item !== "All") {
       item = item === "Movies" ? "Movie" : item;
@@ -71,7 +71,7 @@ const HorizontalBar = ({ CategoryItems }) => {
       >
         {CategoryItems?.map((item, i) => (
           <button
-           className={`text-[#fff]  text-sm py-2 px-4 break-keep whitespace-nowrap rounded-lg mr-3 lg:mr-0 cursor-pointer ${
+            className={`text-[#fff]  text-sm py-2 px-4 break-keep whitespace-nowrap rounded-lg mr-3 lg:mr-0 cursor-pointer ${
               selectedCategory === item
                 ? "bg-[#fff] text-yt-black font-semibold"
                 : "bg-[#8888884c] hover:bg-[#6d6d6d] font-bold"

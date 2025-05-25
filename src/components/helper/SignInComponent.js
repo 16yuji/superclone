@@ -1,4 +1,3 @@
-
 import React from "react";
 import { signInWithPopup } from "firebase/auth";
 import { setUser } from "../../slices/userSlice";
