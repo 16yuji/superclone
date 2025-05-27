@@ -14,7 +14,7 @@ const ContentComponent = () => {
 
   return (
     <>
-       <div className="flex flex-row h-[10%] pl-5 overflow-x-scroll scrollbar-hide border-b-[1px] border-[#3e3e3e]">
+      <div className="flex flex-row h-[10%] pl-5 overflow-x-scroll scrollbar-hide border-b-[1px] border-[#3e3e3e]">
         {ChannelCategoryItems.map((item, i) => (
           <p
             className={`text-sm flex justify-start p-3 items-center cursor-pointer ${
@@ -52,7 +52,9 @@ const ContentComponent = () => {
             <SignInComponent
               prefix={"Please"}
               postfix={`view ${activeInTopbar}`}
-            />
+            >
+              sign in
+            </SignInComponent>
           </div>
         )}
       </div>
