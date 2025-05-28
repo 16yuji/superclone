@@ -38,7 +38,7 @@ const SignInComponent = ({ children, prefix, postfix, className }) => {
       >
         {children ? children : ""}
       </button>
-      {`${postfix ? `to ${postfix.toLowerCase()}` : ""} `}
+       {`${postfix ? ` to ${postfix.toLowerCase()}` : ""} `}
     </div>
   );
 };
