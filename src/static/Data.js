@@ -68,7 +68,7 @@ export const CategoryItems = [
   "Silicon Valley",
   "T-Series",
   "Kollywood",
-  "Kollywood",
+  "Learning",
   "Hollywood",
   "Sitcom",
   "Cricket",
