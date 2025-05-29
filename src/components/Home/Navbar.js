@@ -1,5 +1,5 @@
 // Navbar.js
-
+import ThemeToggle from "../ThemeToggle";
 import React, { useState, useEffect } from "react";
 import { BiVideoPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -165,6 +165,9 @@ const Navbar = () => {
       {/* right section */}
       <div className="flex items-center justify-end w-[30%] ">
         <div className="flex flex-row gap-[1rem] items-center">
+		  <div className="w-10 h-10 rounded-full cursor-pointer">
+			<ThemeToggle />
+          </div>
           {location.pathname === "/YoutubeStudio" ? (
             <CreateVideoButton handleClick={handleClick} />
           ) : (
@@ -187,6 +190,7 @@ const Navbar = () => {
             handleLogout={handleLogout}
             handleLogin={handleLogin}
           />
+		  
         </div>
       </div>
     </div>
