@@ -1,3 +1,5 @@
+// Navbar.js
+
 import React, { useState, useEffect } from "react";
 import { BiVideoPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -89,7 +91,6 @@ const Navbar = () => {
     );
   };
 
-
   const handleLogout = async () => {
     dispatch(logout());
     dispatch(setUserUploadedVideos([]));
@@ -118,7 +119,6 @@ const Navbar = () => {
     }
   };
 
-
   return (
     <div
       className={`z-20 ${
@@ -134,7 +134,7 @@ const Navbar = () => {
           handleToggleSidebar={handleToggleSidebar}
           location={location}
         />
-         <div className="pl-2 w-32">
+        <div className="pl-2 w-32">
           <Link to="/">
             <img
               title="Youtube Clone"
@@ -155,7 +155,7 @@ const Navbar = () => {
               name="Search"
               type="text"
               placeholder="Search"
-               className="w-[95%]  bg-[#00000000] ml-6  text-yt-white text-start focus:outline-none "
+              className="w-[95%]  bg-[#00000000] ml-6  text-yt-white text-start focus:outline-none "
               value={searchQuery}
               onChange={handleSearch}
             />

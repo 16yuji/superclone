@@ -7,7 +7,7 @@ import { MdMic } from "react-icons/md";
 const SearchBar = ({ searchQuery, handleSearch }) => {
   return (
     <div className="h-10 flex flex-row items-center w-2/4">
-    <div className="w-full  h-[2rem] lg:h-[2.2rem] bg-yt-black flex border border-yt-light-black items-center rounded-3xl">
+      <div className="w-full  h-[2rem] lg:h-[2.2rem] bg-yt-black flex border border-yt-light-black items-center rounded-3xl">
         <input
           name="Search videos"
           type="text"
@@ -18,7 +18,7 @@ const SearchBar = ({ searchQuery, handleSearch }) => {
         />
         <button
           title="Search"
-           className="w-16  h-[2rem] lg:h-[2.2rem] bg-yt-light-black px-2 py-0.5 rounded-r-3xl border-1-2 border-yt-light-black"
+          className="w-16  h-[2rem] lg:h-[2.2rem] bg-yt-light-black px-2 py-0.5 rounded-r-3xl border-1-2 border-yt-light-black"
         >
           <HiMagnifyingGlass
             size={22}

@@ -16,8 +16,8 @@ body {
 
 .yt-scrollbar::-webkit-scrollbar-track {
   background: transparent;
-  } */
-/* --------------------------------------------- */
+} */
+/* -------------------------------------------- */
 .yt-scrollbar::-webkit-scrollbar {
   width: 8px;
 }

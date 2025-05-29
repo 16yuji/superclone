@@ -12,7 +12,6 @@ const Sidebar = () => {
   const { isOpen } = useSelector((state) => state.sidebar);
   const location = useLocation();
   const navigate = useNavigate();
-
   const handleFilter = useCallback(
     (category) => {
       if (category !== "Home") {
@@ -24,6 +23,7 @@ const Sidebar = () => {
     },
     [dispatch, allVideos]
   );
+
   const handleItemClick = (category) => {
     if (location.pathname.includes("video")) {
       navigate("/");
@@ -43,7 +43,7 @@ const Sidebar = () => {
               ? "hidden w-0"
               : "block w-[3.7%] pl-2"
           }
-          }
+          ${location.pathname.includes("YoutubeStudio") && "hidden"}
           bg-gray-800 text-white h-full  max-1054:hidden`}
     >
       <div className="mb-4">

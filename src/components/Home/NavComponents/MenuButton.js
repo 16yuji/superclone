@@ -9,10 +9,10 @@ import {
   toggleStudioSidebar,
 } from "../../../slices/sidebarSlice";
 const MenuButton = ({ handleToggleSidebar, location }) => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <div
-       onClick={() => {
+      onClick={() => {
         if (location.pathname !== "/YoutubeStudio") dispatch(toggleSidebar());
         else dispatch(toggleStudioSidebar());
       }}

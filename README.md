@@ -1,79 +1,70 @@
-# Thành viên trong nhóm:
-Nguyễn Bá Huy  23010806\
-Hà Văn Hiệp    23010104\
-Mai Đức Mạnh 23010814
-#  YouTube Clone
+# Getting Started with Create React App
 
-Dự án này là một bản sao giao diện của YouTube, được xây dựng bằng ReactJS và sử dụng RapidAPI để tìm nạp dữ liệu video và kênh. Đây là một dự án front-end thể hiện khả năng sử dụng API, routing, component hóa trong React, và responsive UI.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##  Công nghệ sử dụng
+## Available Scripts
 
-- **React JS** – Framework chính cho giao diện người dùng.
--  **React Router DOM** – Quản lý điều hướng giữa các trang.
--  **Tailwind CSS** – Tạo giao diện hiện đại, responsive và dễ tùy biến.
--  **RapidAPI (YouTube v3 API)** – Nguồn dữ liệu video, kênh, tìm kiếm.
--  **Axios** – Gửi yêu cầu HTTP để lấy dữ liệu từ API.
+In the project directory, you can run:
 
-##  Tính năng
+### `yarn start`
 
-- Tìm kiếm video theo từ khóa.
-- Xem danh sách video theo chủ đề hoặc kênh.
-- Phát video trực tiếp trong ứng dụng.
-- Xem thông tin chi tiết của video và kênh.
-- Giao diện responsive (hoạt động tốt trên mobile và desktop).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-##  Giao diện người dùng
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Trang chủ hiển thị danh sách video phổ biến và sidebar với các chủ đề:
+### `yarn test`
 
-![Trang chủ](public/tchur.jpg)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Trang phát video:
+### `yarn build`
 
-![Trang video](public/video.jpg)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Trang kết quả tìm kiếm:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-![Trang tìm kiếm](public/search.jpg)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `yarn eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-##  Cách chạy dự án
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### 1. Clone repository
+## Learn More
 
-```bash
-git clone https://github.com/16yuji/superclone.git
-cd superclone
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### 2. Cài đặt dependencies
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```bash
-npm install
-```
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-### 3. Chạy ứng dụng
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-```bash
-npm start
-```
+### Making a Progressive Web App
 
-Ứng dụng sẽ chạy tại `http://localhost:3000`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-##  Kiến thức học được
+### Advanced Configuration
 
-- Cách làm việc với API trong React.
-- Cấu trúc một ứng dụng React chuyên nghiệp.
-- Responsive UI với Tailwind CSS.
-- Xử lý routing động trong SPA.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## 📌 Ghi chú
+### Deployment
 
-- Ứng dụng này chỉ là bản **clone UI** của YouTube,  hỗ trợ chức năng như đăng nhập, upload clone từ ytb, bình luận...
-- Hạn mức API miễn phí có thể giới hạn số lần tìm nạp dữ liệu.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
