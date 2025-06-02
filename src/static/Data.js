@@ -46,7 +46,7 @@ export const SideBarItems = {
     { icon: <BsNewspaper size={21} />, name: "News" },
     { icon: <CiTrophy size={23} />, name: "Sports" },
     { icon: <AiOutlineBulb size={21} />, name: "Learning" },
-    { icon: <GiDress size={21} />, name: "Fashion & beauty" },
+    { icon: <GiDress size={21} />, name: "Fashion & Beauty" },
   ],
   channel: [
     { icon: <GrDashboard size={21} />, name: "Dashboard" },
@@ -63,22 +63,18 @@ export const SideBarItems = {
 
 export const CategoryItems = [
   "All",
+  "News",
+  "Movies",
+  "Sports",
   "Music",
-  "Mixes",
-  "Silicon Valley",
-  "T-Series",
-  "Kollywood",
+  "Live",
   "Learning",
-  "Hollywood",
-  "Sitcom",
-  "Cricket",
-  "Tech",
   "Gaming",
+  "Fashion & Beauty",
 ];
 export const ChannelCategoryItems = [
   "Videos",
   "Shorts",
-  "Mixes",
   "Live",
   "Playlists",
   "Podcast",
