@@ -1,7 +1,7 @@
 import React from "react";
 import { MdVerified } from "react-icons/md";
 import { TailSpin } from "react-loader-spinner";
-const VideoDetails = ({ data }) => {
+const VideoDetails = ({ data, videoActions }) => {
   return (
     <div>
       <h2 className="text-[#fff] font-semibold mt-3 mb-2 text-md lg:text-xl">
@@ -17,8 +17,11 @@ const VideoDetails = ({ data }) => {
         </div>
         <span className="text-center font-medium">{data?.description}</span>
       </div>
-      <div className="flex max-791:flex-col lg:p-2 flex-row max-791:gap-4 max-791:items-start items-center justify-between">
-        <div className="flex items-center lg:mb-0 flex-wrap">
+      
+      {/* FIXED: Channel info và Action buttons cùng hàng */}
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        {/* Channel info + Subscribe button */}
+        <div className="flex items-center flex-wrap">
           {!data.logo ? (
             <TailSpin visible height="20" width="20" color="#fff" />
           ) : (
@@ -54,6 +57,11 @@ const VideoDetails = ({ data }) => {
           >
             Subscribe
           </button>
+        </div>
+
+        {/* Action buttons (Like, Share, Download, etc.) */}
+        <div className="flex-shrink-0">
+          {videoActions}
         </div>
       </div>
     </div>
