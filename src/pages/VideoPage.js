@@ -143,11 +143,14 @@ const VideoPage = () => {
     >
       <div className="lg:flex-1 lg:pr-4 lg:pl-4">
         <VideoPlayer link={data?.link} isOpen={isOpen} />
-        <VideoDetails data={data} />
-        <VideoActions
-          liked={liked}
-          likeCount={likeCount}
-          debouncedToggleLike={debouncedToggleLike}
+        <VideoDetails data={data} 
+          videoActions={
+            <VideoActions
+              liked={liked}
+              likeCount={likeCount}
+              debouncedToggleLike={debouncedToggleLike}
+            />
+          }
         />
         <CommentsSection
           user={user}
