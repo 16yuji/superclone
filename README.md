@@ -76,7 +76,10 @@ npm start
 
 - Ứng dụng này chỉ là bản **clone UI** của YouTube,  hỗ trợ chức năng như đăng nhập, upload clone từ ytb, bình luận...
 - Hạn mức API miễn phí có thể giới hạn số lần tìm nạp dữ liệu.
-##  video demo:
-[🎬 Xem video demo trên ](https://drive.google.com/drive/folders/1bew3X5V1ZE2wIlP9YDew-ixJtQRAEy9e)
+##  Video demo
+[Xem video demo tại đây. ](https://drive.google.com/drive/folders/1bew3X5V1ZE2wIlP9YDew-ixJtQRAEy9e)
+
+##  File báo cáo
+[Xem file báo cáo bản mềm tại đây. (File Word)](https://daihocphenikaa-my.sharepoint.com/:w:/g/personal/23010104_st_phenikaa-uni_edu_vn/EUfK-EyclWdJj3A1JRw2paoBTppsGZAQ1bHFN_glddQN7A?e=LACrVO)
 
 
